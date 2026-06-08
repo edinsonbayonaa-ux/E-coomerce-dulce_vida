@@ -1,0 +1,70 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Events Section
+--------------------------------------------------------------*/
+.events {
+  .container-fluid {
+    padding: 0;
+  }
+
+  .event-item {
+    background-size: cover;
+    background-position: cente;
+    min-height: 600px;
+    padding: 30px;
+
+    @media (max-width: 575px) {
+      min-height: 500px;
+    }
+
+    &:before {
+      content: "";
+      background: rgba(0, 0, 0, .6);
+      position: absolute;
+      inset: 0;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .price {
+      color: #ffffff;
+      border-bottom: 2px solid var(--accent-color);
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .description {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .8);
+      position: relative;
+    }
+  }
+
+  .swiper-wrapper {
+    height: auto;
+  }
+
+  .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--accent-color);
+    }
+  }
+}

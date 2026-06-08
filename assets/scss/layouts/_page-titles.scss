@@ -1,0 +1,43 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+
+  h1 {
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-family: var(--default-font);
+  }
+
+  .breadcrumbs {
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+
+      li+li {
+        padding-left: 10px;
+      }
+
+      li+li::before {
+        content: "/";
+        display: inline-block;
+        padding-right: 10px;
+        color: color-mix(in srgb, var(--default-color), transparent 70%);
+      }
+    }
+  }
+}

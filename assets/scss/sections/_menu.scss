@@ -1,0 +1,101 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Menu Section
+--------------------------------------------------------------*/
+.menu {
+  .nav-tabs {
+    border: 0;
+  }
+
+  .nav-link {
+    background-color: var(--background-color);
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin: 0 15px;
+    padding: 10px 5px;
+    transition: 0.3s;
+    border-radius: 0;
+    cursor: pointer;
+    height: 100%;
+    border: 0;
+    border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
+
+    @media (max-width: 575px) {
+      margin: 0 10px;
+      padding: 10px 0;
+    }
+
+    i {
+      padding-right: 15px;
+      font-size: 48px;
+    }
+
+    h4 {
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+      font-family: var(--default-font);
+
+      @media (max-width: 575px) {
+        font-size: 16px;
+      }
+    }
+
+    &:hover {
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+
+    &.active {
+      background-color: var(--background-color);
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+  }
+
+  .tab-content {
+    .tab-header {
+      padding: 30px 0;
+
+      p {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--accent-color);
+      }
+    }
+
+    .menu-item {
+      text-align-last: center;
+
+      .menu-img {
+        padding: 0 60px;
+        margin-bottom: 15px;
+      }
+
+      h4 {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 5px;
+        font-family: var(--default-font);
+      }
+
+      .ingredients {
+        font-family: var(--nav-font);
+        color: color-mix(in srgb, var(--default-color), transparent 50%);
+        margin-bottom: 5px;
+      }
+
+      .price {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--accent-color);
+      }
+    }
+  }
+}
