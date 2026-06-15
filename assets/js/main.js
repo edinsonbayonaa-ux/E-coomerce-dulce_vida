@@ -232,3 +232,23 @@ function mostrarTab(tab) {
       error.textContent = data.mensaje;
     }
   }
+
+  document.getElementById('formulario-registro').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que la página se recargue
+    
+    // 1. Capturar los valores de los inputs de HTML
+    const nombre = document.getElementById('ins-nombre').value;
+    const edad = document.getElementById('ins-edad').value;
+    const cedula = document.getElementById('ins-cedula').value;
+    const telefono = document.getElementById('ins-telefono').value;
+    const correo = document.getElementById('ins-correo').value;
+    
+    // 2. Pasarle los datos al constructor para crear el objeto
+    const nuevoUsuario = new Usuario(nombre, edad, cedula, telefono, correo);
+    
+    // 3. ¡Listo! Ya tienes el objeto creado y estructurado
+    console.log("Usuario almacenado con éxito:", nuevoUsuario);
+    
+    // Aquí podrías agregar el objeto a un array o enviarlo a un servidor
+    this.reset(); // Limpia el formulario
+});
