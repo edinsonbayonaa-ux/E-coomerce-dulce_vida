@@ -173,4 +173,62 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  window.addEventListener('load', navmenuScrollspy);
+  document.addEventListener('scroll', navmenuScrollspy);
+
 })();
+
+function mostrarTab(tab) {
+    document.getElementById('formLogin').style.display = tab === 'login' ? 'block' : 'none';
+    document.getElementById('formRegistro').style.display = tab === 'registro' ? 'block' : 'none';
+    document.getElementById('tabLogin').style.background = tab === 'login' ? '#ffc2e6' : '#ccc';
+    document.getElementById('tabRegistro').style.background = tab === 'registro' ? '#ffc2e6' : '#ccc';
+    document.getElementById('tabLogin').style.color = tab === 'login' ? 'white' : 'black';
+    document.getElementById('tabRegistro').style.color = tab === 'registro' ? 'white' : 'black';
+  }
+
+  async function registrarse() {
+    const usuario = document.getElementById('regUser').value.trim();
+    const password = document.getElementById('regPass').value;
+    const password2 = document.getElementById('regPass2').value;
+    const error = document.getElementById('regError');
+
+    if (!usuario || !password) { error.textContent = 'Completa todos los campos.'; return; }
+    if (password !== password2) { error.textContent = 'Las contraseñas no coinciden.'; return; }
+
+    const res = await fetch('registro.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ usuario, password })
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      error.style.color = 'green';
+      error.textContent = '¡Cuenta creada! Ya puedes iniciar sesión.';
+      setTimeout(() => mostrarTab('login'), 1500);
+    } else {
+      error.style.color = 'red';
+      error.textContent = data.mensaje;
+    }
+  }
+
+  async function iniciarSesion() {
+    const usuario = document.getElementById('loginUser').value.trim();
+    const password = document.getElementById('loginPass').value;
+    const error = document.getElementById('loginError');
+
+    const res = await fetch('login.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ usuario, password })
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      document.getElementById('modalLogin').style.display = 'none';
+      alert('¡Bienvenido, ' + usuario + '!');
+    } else {
+      error.textContent = data.mensaje;
+    }
+  }

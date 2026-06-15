@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Hamburguesa express</title>
+  <title>Dulce Vida</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -85,15 +85,35 @@
         </a>
 
         <!-- Modal -->
-        <div id="modalLogin" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
-          <div style="background:#b0fafa; padding:40px; border-radius:10px; width:400px;">
-            <h2>Iniciar Sesión</h2>
-            <input type="text" placeholder="Usuario" style="width:100%; margin:10px 0; padding:8px;"><br>
-            <input type="password" placeholder="Contraseña" style="width:100%; margin:10px 0; padding:8px;"><br>
-            <button onclick="/* lógica de login */">Entrar</button>
-            <button onclick="document.getElementById('modalLogin').style.display='none'">Cerrar</button>
-          </div>
+      <div id="modalLogin" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
+      <div style="background:#b0fafa; padding:40px; border-radius:10px; width:400px;">
+        
+        <!-- Pestañas -->
+        <div style="display:flex; gap:10px; margin-bottom:20px;">
+          <button onclick="mostrarTab('login')" id="tabLogin" style="flex:1; padding:8px; background:#ffc2e6; color:white; border:none; border-radius:5px; cursor:pointer; color: black;">Iniciar Sesión</button>
+          <button onclick="mostrarTab('registro')" id="tabRegistro" style="flex:1; padding:8px; background:#cccccc; border:none; border-radius:5px; cursor:pointer;">Registrarse</button>
         </div>
+
+        <!-- Formulario Login -->
+        <div id="formLogin">
+          <input id="loginUser" type="text" placeholder="Usuario" style="width:100%; margin:8px 0; padding:8px; border-radius:5px; border:1px solid #aaa;"><br>
+          <input id="loginPass" type="password" placeholder="Contraseña" style="width:100%; margin:8px 0; padding:8px; border-radius:5px; border:1px solid #aaa;"><br>
+          <p id="loginError" style="color:#ffc2e6; font-size:13px;"></p>
+          <button onclick="iniciarSesion()" style="width:100%; padding:10px; background:#ffc2e6; color:white; border:none; border-radius:5px; cursor:pointer; color: black;">Entrar</button>
+        </div>
+
+        <!-- Formulario Registro -->
+        <div id="formRegistro" style="display:none;">
+          <input id="regUser" type="text" placeholder="Nombre de usuario" style="width:100%; margin:8px 0; padding:8px; border-radius:5px; border:1px solid #aaa;"><br>
+          <input id="regPass" type="password" placeholder="Contraseña" style="width:100%; margin:8px 0; padding:8px; border-radius:5px; border:1px solid #aaa;"><br>
+          <input id="regPass2" type="password" placeholder="Confirmar contraseña" style="width:100%; margin:8px 0; padding:8px; border-radius:5px; border:1px solid #aaa;"><br>
+          <p id="regError" style="color:#ffc2e6; font-size:13px;"></p>
+          <button onclick="registrarse()" style="width:100%; padding:10px; background:#ffc2e6; color:#aaa; border:none; border-radius:5px; cursor:pointer;">Crear Cuenta</button>
+        </div>
+
+        <button onclick="document.getElementById('modalLogin').style.display='none'" style="width:100%; margin-top:10px; padding:8px; background:#e4e4e4; color:white; border:none; border-radius:5px; cursor:pointer; color: black;">Cerrar</button>
+      </div>
+    </div>
         
       </div>
     </div>
@@ -385,10 +405,10 @@
               </div>
 
               <div class="text-center mt-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Cargando...</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
-                <button type="submit">Book a Table</button>
+                <div class="sent-message">Su solicitud de reserva ha sido enviada. Nos pondremos en contacto con usted por teléfono o correo electrónico para confirmar su reserva. Gracias.!</div>
+                <button type="submit">Reservar Mesa</button>
               </div>
             </form>
           </div><!-- End Reservation Form -->
