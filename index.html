@@ -47,21 +47,55 @@
         <div class="colorT">
           <h1 class="sitename" style="color: #8bc0f1; ">Dulce Vida</h1>
         </div>
-        <span>.</span>
+        <span></span>
       </a>
 
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home<br></a></li>
+        <ul style="justify-content: center;">
+          <li><a href="#hero" class="active">Inicio<br></a></li>
           <li><a href="#menu">Menu</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#gallery">Galeria</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#book-a-table">Book a Table</a>
+      <div class="d-flex align-items-center ms-auto gap-2">
+        <li class="ms-5" style="list-style: none;">
 
+          <a href="#" onclick="document.getElementById('modalBuy').style.display='flex'; return false">
+            <i class="bi bi-cart-fill" style="font-size: 25px;"></i>
+          </a>
+
+          <div id="modalBuy" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 9999;">
+            <div style="background: #b0fafa; padding: 40px; border-radius: 10px; width: 400px;">
+              <h2>Carrito</h2>
+              <button onclick="/* lógica de login */">Pagar</button>
+              <button onclick="document.getElementById('modalBuy').style.display='none'">Cancelar</button>
+            </div>
+          </div>
+
+        </li>
+
+        <a class="btn-getstarted" href="index.html#book-a-table">Reserva una Mesa</a>
+
+        <!-- Botón -->
+        <a class="btn-getstarted" href="#" onclick="document.getElementById('modalLogin').style.display='flex'; return false;">
+          Iniciar Sesión
+        </a>
+
+        <!-- Modal -->
+        <div id="modalLogin" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
+          <div style="background:#b0fafa; padding:40px; border-radius:10px; width:400px;">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" placeholder="Usuario" style="width:100%; margin:10px 0; padding:8px;"><br>
+            <input type="password" placeholder="Contraseña" style="width:100%; margin:10px 0; padding:8px;"><br>
+            <button onclick="/* lógica de login */">Entrar</button>
+            <button onclick="document.getElementById('modalLogin').style.display='none'">Cerrar</button>
+          </div>
+        </div>
+        
+      </div>
     </div>
   </header>
 
@@ -73,11 +107,11 @@
       <div class="container">
         <div class="row gy-4 justify-content-center justify-content-lg-between">
           <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up">Discover Sweet Handcrafted Delights<br>Delicious Candys</h1>
-            <p data-aos="fade-up" data-aos-delay="100">We are Dulce Vida, an artisan candy shop where every treat is made with love, fresh ingredients, and a passion for sweetness.</p>
+            <h1 data-aos="fade-up" style="color: #f18be0;">Descubre Deliciosas Creaciones Artesanales Dulces<br>Dulces Deliciosos</h1> 
+            <p data-aos="fade-up" data-aos-delay="100" style="color: rgb(0, 0, 0);">Somos Dulce Vida, una tienda artesanal de dulces donde cada creación se elabora con amor, ingredientes frescos y una verdadera pasión por lo dulce.</p>
             <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <a href="#book-a-table" class="btn-get-started">Booka a Table</a>
-              <a href="https://www.youtube.com/embed/WJB0mTWjXp8?list=RDMMuXaExKJkP_g" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="#book-a-table" class="btn-get-started">Reserva una Mesa</a>
+              <a href="https://www.youtube.com/embed/WJB0mTWjXp8?list=RDMMuXaExKJkP_g" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Ver video</span></a>
             </div>
           </div>
           <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
@@ -97,12 +131,12 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="why-box">
-              <h3>Why Choose Dulce Vida?</h3>
+              <h3>¿Por qué elegir Dulce Vida?</h3>
               <p>
-                At Dulce Vida, every sweet treat is crafted with fresh ingredients and plenty of love. From artisan chocolates to gummies and caramels, we have the perfect flavor for every moment. Sweeten your day with our unique creations, made just for you.
+                En Dulce Vida, cada dulce está elaborado con ingredientes frescos y mucho amor. Desde chocolates artesanales hasta gomitas y caramelos, tenemos el sabor perfecto para cada ocasión. Endulza tu día con nuestras creaciones únicas, hechas especialmente para ti.
               </p>
               <div class="text-center">
-                <a href="#" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+                <a href="#" class="more-btn"><span>Más Información</span> <i class="bi bi-chevron-right"></i></a>
               </div>
             </div>
           </div><!-- End Why Box -->
@@ -113,24 +147,24 @@
               <div class="col-xl-4">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-clipboard-data"></i>
-                  <h4>Fresh & Handmade</h4>
-                  <p>Every candy is carefully made by hand using only the finest natural ingredients, ensuring a unique and delicious taste in every bite.</p>
+                  <h4>Fresco y Hecho a Mano</h4>
+                  <p>Cada dulce es elaborado cuidadosamente a mano utilizando únicamente ingredientes naturales de la más alta calidad, garantizando un sabor único y delicioso en cada bocado.</p>
                 </div>
               </div><!-- End Icon Box -->
 
               <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-gem"></i>
-                  <h4>Premium Quality</h4>
-                  <p>We select the best chocolates, fruits, and flavors to create sweets that are truly special, because you deserve nothing but the best.</p>
+                  <h4>Calidad Premium</h4>
+                  <p>Seleccionamos los mejores chocolates, frutas y sabores para crear dulces verdaderamente especiales, porque mereces nada menos que lo mejor.</p>
                 </div>
               </div><!-- End Icon Box -->
 
               <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-inboxes"></i>
-                  <h4>Made With Love</h4>
-                  <p>Each order is prepared with dedication and passion. Whether it's a gift or a personal treat, Dulce Vida makes every moment sweeter.</p>
+                  <h4>Hecho con Amor</h4>
+                  <p>Cada pedido se prepara con dedicación y pasión. Ya sea un regalo especial o un gusto personal, Dulce Vida hace que cada momento sea más dulce.</p>
                 </div>
               </div><!-- End Icon Box -->
 
@@ -146,23 +180,16 @@
     <!-- Stats Section -->
     <section id="stats" class="stats section dark-background">
 
-      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+      <img src="assets/img/stat.png" alt="" data-aos="fade-in">
 
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center">
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
               <p>Clients</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
             </div>
           </div><!-- End Stats Item -->
 
@@ -175,7 +202,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
               <p>Workers</p>
             </div>
           </div><!-- End Stats Item -->
@@ -315,149 +342,20 @@
 
     </section><!-- /Menu Section -->
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Saul Goodman</h3>
-                      <h4>Ceo &amp; Founder</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Sara Wilsson</h3>
-                      <h4>Designer</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-2.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Jena Karlis</h3>
-                      <h4>Store Owner</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-3.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-4.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
-
     <!-- Book A Table Section -->
     <section id="book-a-table" class="book-a-table section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Book A Table</h2>
-        <p><span>Book Your</span> <span class="description-title">Stay With Us<br></span></p>
+        <h2>Reserva una Mesa</h2>
+        <p><span>Reserva Tu Mesa</span> <span class="description-title">🍬 Acompáñanos<br></span></p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.jpg);"></div>
+          <div class="col-lg-4 reservation-img" style="background-image: url(assets/img/reservation.png);"></div>
 
           <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
             <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
@@ -506,8 +404,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Gallery</h2>
-        <p><span>Check</span> <span class="description-title">Our Gallery</span></p>
+        <h2>Galeria</h2>
+        <p><span>Revisar</span> <span class="description-title">Nuestra Galería</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -565,8 +463,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p><span>Need Help?</span> <span class="description-title">Contact Us</span></p>
+        <h2>Contacto</h2>
+        <p><span>Necesitas Ayuda?</span> <span class="description-title">Contactanos</span></p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
